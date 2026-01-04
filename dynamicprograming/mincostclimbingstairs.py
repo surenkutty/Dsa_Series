@@ -8,7 +8,7 @@ def climb(cost):
         dp[i]=cost[i]+min(dp[i-1],dp[i-2])
     return min(dp[n-1],dp[n-2])
 
-cost=[10,15,20]
+cost=[10,15,20,25,35]
 print(climb(cost))
 
 '''
