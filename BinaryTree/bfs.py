@@ -50,7 +50,7 @@ class Tree:
     def height(self,root):
         if root is None:
             return 0
-        return 1+max(self.height(root.left),self.height(root.left))
+        return 1+max(self.height(root.right),self.height(root.left))
     def deleteNode(self,root,key) :
         if not root:
             return root
