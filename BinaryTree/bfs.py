@@ -51,6 +51,26 @@ class Tree:
         if root is None:
             return 0
         return 1+max(self.height(root.left),self.height(root.left))
+    def deleteNode(self,root,key) :
+        if not root:
+            return root
+
+        if key>root.val:
+            root.right=self.deleteNode(root.right,key)
+        elif key<root.val:
+            root.left=self.deleteNode(root.left,key)
+        else:
+            if not root.left:
+                return root.right
+            elif not root.right:
+                return root.left
+            
+            curr=root.right
+            while curr.left:
+                curr=curr.left
+            root.val=curr.val
+            root.right=self.deleteNode(root.right,root.val)
+        return root
 
 t=Tree()
 values = [10, 5, 15, 3, 7, 12]
