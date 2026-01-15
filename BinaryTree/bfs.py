@@ -71,6 +71,25 @@ class Tree:
             root.val=curr.val
             root.right=self.deleteNode(root.right,root.val)
         return root
+    
+    def minv(self,root):
+        
+        if root is None:
+            return None
+
+        curr = root
+        while curr.left:
+            curr = curr.left
+
+        return curr.val
+        
+    def maxv(self,root):
+        if root is None:
+            return None
+        curr=root
+        while curr.right:
+            curr=curr.right
+        return curr.val
 
 t=Tree()
 values = [10, 5, 15, 3, 7, 12]
